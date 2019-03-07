@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
+    <classes>
+      <class name="selenideTest.SelenideTest">
+        <methods>
+          <include name="sendPersonalData"/>
+          <include name="googleSearch"/>
+          <include name="sendForm"/>
+          <include name="chooseDateAndPicture"/>
+          <include name="downloadFramework"/>
+          <include name="checkTable"/>
+          <include name="init"/>
+          <include name="pickFromListboxes"/>
+        </methods>
+      </class> <!-- selenideTest.SelenideTest -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

@@ -28,7 +28,7 @@ public class GooglePage {
 	  * 
 	  * Open Google main page.
 	  *
-	  * @return page represented by GooglePage object. 
+	  * @return instance of GooglePage object. 
 	  */
 	  public GooglePage openHomepage() {
 		Selenide.open(ConfigKeys.getConfigKey("home_page"));

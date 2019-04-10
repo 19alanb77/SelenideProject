@@ -22,12 +22,9 @@ public class ToolsQAPage {
 	   * @param name
 	   *          value that should be inserted in name field 
 	   * 
-	   * @return ToolsQAPage object itself
-	   * 
 	   */
-	   public ToolsQAPage insertName(String name) {
+	   public void insertName(String name) {
 	        $(By.name("firstname")).val(name);
-	        return this;
 	   }
 	   
 	   /**
@@ -36,12 +33,9 @@ public class ToolsQAPage {
 	   * @param surname
 	   *          value that should be inserted in name field 
 	   * 
-	   * @return ToolsQAPage object itself
-	   * 
 	   */
-	   public ToolsQAPage insertSurname(String surname) {
+	   public void insertSurname(String surname) {
 	        $(By.name("lastname")).val(surname);
-	        return this;
 	   }
 	   
 	   /**
@@ -53,13 +47,10 @@ public class ToolsQAPage {
 	   * @param experience
 	   *          value that should be picked in experiance field 
 	   * 
-	   * @return ToolsQAPage object itself
-	   * 
 	   */
-	   public ToolsQAPage pickRadioButtons(String sex, String experience) {
+	   public void pickRadioButtons(String sex, String experience) {
 		$("input").selectRadio(sex);
 		$("input").selectRadio(experience);
-	        return this;
 	   }
 	   
 	   /**
@@ -71,15 +62,12 @@ public class ToolsQAPage {
 	   * @param tester
 	   *          value that should be picked in profession field 
 	   * 
-	   * @return ToolsQAPage object itself
-	   * 
 	   */
-	   public ToolsQAPage chooseDateAndPicture(String date, String tester) {
+	   public void chooseDateAndPicture(String date, String tester) {
 		$(By.id("datepicker")).val(date);		   
 		$$("input").find(value(tester)).click();
 		File file = new File(ConfigKeys.getConfigKey("file_path"));
 		$(By.id("photo")).uploadFile(file);
-	        return this;
 	   }
 	   
 	   /**
@@ -88,13 +76,10 @@ public class ToolsQAPage {
 	   * @param tool
 	   *          value that should be picked from available frameworks 
 	   * 
-	   * @return ToolsQAPage object itself
-	   * 
 	   */
-	   public ToolsQAPage downloadFramework(String tool) {
+	   public void downloadFramework(String tool) {
 		$$("a").find(text("Test File to Download")).click();
 		$$("input").find(value(tool)).click();
-		return this;
 	   }
 	   
 	   /**
@@ -105,34 +90,28 @@ public class ToolsQAPage {
 	   *
 	   * @param command
 	   *          value that should be picked in selenium commands field 
-	   *   
-	   * @return ToolsQAPage object itself
 	   * 
 	   */
-	   public ToolsQAPage pickFromListboxes(String continent,String command) {
+	   public void pickFromListboxes(String continent,String command) {
 		$(By.id("continents")).click();
 		$$("option").find(text(continent)).click();
 		$$("option").find(text(command)).click();
-		return this;
 	   }
 	   
 	   /**
 	   * Send completed form.
-	   *    
-	   * @return ToolsQAPage object itself
 	   * 
 	   */ 
 	   public ToolsQAPage sendForm() {
 		$$(By.id("NextedText")).shouldHave(texts("Text1"));
 		$(By.id("submit")).click();
-		return this;
 	   }
 	   
 	   /**
 	   * 
 	   * Click on new page button.
 	   *
-	   * @return page represented by ToolsQAPage object. 
+	   * @return instance of ToolsQAPage object. 
 	   */
 	   public ToolsQAPage clickNewPage() {
 		$(By.xpath("//div/form/fieldset/div[5]/a/strong")).click();
@@ -144,12 +123,9 @@ public class ToolsQAPage {
 	   * 
 	   * @param data
 	   *          value that should be searched for in table 
-	   *      
-	   * @return ToolsQAPage object itself
 	   * 
 	   */ 
-	   public ToolsQAPage checkData(String data) {
+	   public void checkData(String data) {
 		$(".tsc_table_s13").should(exist).shouldHave(text(data));
-		return this;
 	   }
 }

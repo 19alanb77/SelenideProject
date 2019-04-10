@@ -6,6 +6,11 @@ import org.testng.annotations.Test;
 import selenidePage.GooglePage;
 import selenidePage.ToolsQAPage;
 
+/**
+ * Class that allows to create example test using Selenide.
+ * 
+ * @author Alan Buda
+ */ 
 public class SelenideTest {
 
 	private static ToolsQAPage tools = new ToolsQAPage();

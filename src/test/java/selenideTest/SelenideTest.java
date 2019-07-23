@@ -1,7 +1,7 @@
 package selenideTest;
 
 import static com.codeborne.selenide.Condition.*;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import selenidePage.GooglePage;
 import selenidePage.ToolsQAPage;
@@ -16,7 +16,7 @@ public class SelenideTest {
 	private static ToolsQAPage tools = new ToolsQAPage();
 	private static GooglePage google = new GooglePage();
 	
-	@BeforeTest(description = "Initialization of ChromeDriver properties")
+	@BeforeClass(description = "Initialization of ChromeDriver properties")
 	public static void init() {
 		GooglePage.setDriver();
 	}

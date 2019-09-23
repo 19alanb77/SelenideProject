@@ -16,12 +16,12 @@ public class GooglePage {
 	  
 	  /**
 	  * 
-	  * Set ChromeDriver path from config.properties file.
+	  * Set automation driver.
 	  * 
 	  */ 
 	  public static void setDriver() {
-		System.setProperty("webdriver.chrome.driver", ConfigKeys.getConfigKey("driver_path"));
-		System.setProperty("selenide.browser", ConfigKeys.getConfigKey("selenide_browser"));
+		Configuration.browser = ConfigKeys.getConfigKey("selenide_browser");
+		Configuration.startMaximized = true;
 	  }
 	  
 	  /**
